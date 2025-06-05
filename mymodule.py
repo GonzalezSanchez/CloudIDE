@@ -1,3 +1,5 @@
+'''this module is to practice testing'''
+
 def square(number):
     '''
     This function returns the square of a given number

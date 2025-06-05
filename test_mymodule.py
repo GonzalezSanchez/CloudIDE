@@ -40,11 +40,37 @@ class TestDouble(unittest.TestCase):
         # This tests if the function correctly computes double of 0, verifying that the function works for edge cases.
         self.assertEqual(double(0), 0) # test when 0 is given as input the output is 0.
         
+'''
+Thuiswerk:
+Write test cases for these scenarios.
+    -   When 2 and 4 are given as input the output must be 6.
+    -   When 0 and 0 are given as input the output must be 0.
+    -   When 2.3 and 3.6 are given as input the output must be 5.9.
+    -   When the strings ‘hello’ and ‘world’ are given as input the output must be ‘helloworld’.
+    -   When 2.3000 and 4.300 are given as input the output must be 6.6.
+    -   When -2 and -2 are given as input the output must not be 0. (Hint : Use assertNotEqual)
+'''
+
 class TestAdd(unittest.TestCase):
     def test1(self): 
-        self.assertEqual(add(2,3), 5)
+        # When 2 and 4 are given as input the output must be 6.
+        self.assertEqual(add(2, 4), 6)
 
+        # When 0 and 0 are given as input the output must be 0.
+        self.assertEqual(add(0, 0), 0)
 
+        # When 2.3 and 3.6 are given as input the output must be 5.9.
+        self.assertEqual(add(2.3, 3.6), 5.9)
+
+        # When the strings ‘hello’ and ‘world’ are given as input the output must be ‘helloworld’.
+        self.assertEqual(add('hello', 'world'), 'helloworld')
+
+        # When 2.3000 and 4.300 are given as input the output must be 6.6.
+        self.assertEqual(add(2.3000, 4.300), 6.6)
+
+        # When -2 and -2 are given as input the output must not be 0. (Hint : Use assertNotEqual)
+        self.assertNotEqual(add(-2, -2), 0)
+        
 
 # Run all the test cases defined in the module when the script is executed.
 # This will automatically discover and run all the test cases defined in the module.
