@@ -1,0 +1,13 @@
+#do not forget it to rename it as 'requirements.txt', unless there is a good reason to not use the conventional name
+pylint
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+jupyter
+
+
+#specifying the version (comment)
+#pandas==2.2.1
+#numpy>=1.24
