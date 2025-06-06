@@ -1,0 +1,8 @@
+pylint
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+jupyter
+flask==2.2.2
