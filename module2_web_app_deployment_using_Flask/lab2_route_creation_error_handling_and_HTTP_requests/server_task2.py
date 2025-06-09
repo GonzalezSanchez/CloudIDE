@@ -7,10 +7,11 @@ Hands-on Lab: Building an API with Flask: Route Creation, Error Handling, and HT
     Step 5: Add error handlers
 '''
 
+#Step 2. Procss input arguments
+
 from flask import Flask, make_response, request
 app = Flask(__name__)
 
-#Step 2. Procss input arguments
 '''
 It is common for clients to pass arguments in the URL. 
 The lab provides a list of people with their id, first name, last name, and address information in an

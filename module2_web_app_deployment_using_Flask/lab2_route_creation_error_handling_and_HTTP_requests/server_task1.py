@@ -6,7 +6,7 @@ Hands-on Lab: Building an API with Flask: Route Creation, Error Handling, and HT
     Step 4: Parse JSON from Request body
     Step 5: Add error handlers
 '''
-
+#Step 1: Set response status code
 
 # Import the Flask class from the flask module
 from flask import Flask, make_response
