@@ -1,3 +1,13 @@
+'''
+Hands-on Lab: Building an API with Flask: Route Creation, Error Handling, and HTTP Requests
+    Step 1: Set response status code
+    Step 2: Process input arguments
+    Step 3: Add dynamic URLs
+    Step 4: Parse JSON from Request body
+    Step 5: Add error handlers
+'''
+
+
 # Import the Flask class from the flask module
 from flask import Flask, make_response
 # Create an instance of the Flask class, passing in the name of the current module
@@ -10,15 +20,15 @@ def index():
     return "hello world"
 
     r'''
-        to run the server from the terminal:
-            flask --app server2 --debug run
+    to run the server from the terminal:
+        flask --app server2 --debug run
 
-        Then use the CURL command with localhost:5000/. Note that the terminal is running the server.
-        So, use the Split Terminal button to split the terminal and run the following command in the second tab.
-            curl -X GET -i -w '\n' localhost:5000
+    Then use the CURL command with localhost:5000/. Note that the terminal is running the server.
+    So, use the Split Terminal button to split the terminal and run the following command in the second tab.
+        curl -X GET -i -w '\n' localhost:5000
 
-        If the command prompt is long, you can shorten it:
-            export PS1="[\[\033[01;32m\]\u\[\033[00m\]: \[\033[01;34m\]\W\[\033[00m\]]\$ "
+    If the command prompt is long, you can shorten it:
+        export PS1="[\[\033[01;32m\]\u\[\033[00m\]: \[\033[01;34m\]\W\[\033[00m\]]\$ "
     '''
 
 
@@ -65,40 +75,40 @@ Step 1:
 #def {insert method name}():
 def no_content():
     '''
-        return 'No content found' with a status of 204
-        Returns:
-            string: No content found
-            status code: 204
+    return 'No content found' with a status of 204
+    Returns:
+        string: No content found
+        status code: 204
     '''
     #return ({insert dictionary here}, {insert HTTP code here})
     return ({"message": "No content found"}, 204)
     '''
-        no need to put a message because it will not be shown
-            Option 1: Stick with 204, but don't include a body
-                return '', 204
-            Option 2: Use 200 OK or 404 Not Found if a message matters
-                return {"message": "No content found"}, 200  # or 404 if it's an error
-        Use a different status code (rather than 204) if you need to send a message.
+    no need to put a message because it will not be shown
+        Option 1: Stick with 204, but don't include a body
+            return '', 204
+        Option 2: Use 200 OK or 404 Not Found if a message matters
+            return {"message": "No content found"}, 200  # or 404 if it's an error
+    Use a different status code (rather than 204) if you need to send a message.
     '''
 
 r'''
-    Step 1 (vervolgd):
-        Task 2. Create a second method named index_explicit with the @app.route decorator and a URL of /exp.
-            The method does not have any arguments. Use the make_response() method to create a new response. Set the status to 200.
-            You can test the endpoint with the following CURL command:
-                curl -X GET -i -w '\n' localhost:5000/exp
+Step 1 (vervolgd):
+    Task 2. Create a second method named index_explicit with the @app.route decorator and a URL of /exp.
+        The method does not have any arguments. Use the make_response() method to create a new response. Set the status to 200.
+        You can test the endpoint with the following CURL command:
+            curl -X GET -i -w '\n' localhost:5000/exp
 
-            You should see an output similar to the one given below. Note the status of 200,
-            Content-Type of application/json, and JSON output of {"message": "Hello World"}:
-                HTTP/1.1 200 OK
-                Server: Werkzeug/2.2.2 Python/3.7.16
-                Date: Wed, 28 Dec 2022 19:55:46 GMT
-                Content-Type: application/json
-                Content-Length: 31
-                Connection: close
-                {
-                "message": "Hello World"
-                }
+        You should see an output similar to the one given below. Note the status of 200,
+        Content-Type of application/json, and JSON output of {"message": "Hello World"}:
+            HTTP/1.1 200 OK
+            Server: Werkzeug/2.2.2 Python/3.7.16
+            Date: Wed, 28 Dec 2022 19:55:46 GMT
+            Content-Type: application/json
+            Content-Length: 31
+            Connection: close
+            {
+            "message": "Hello World"
+            }
 '''
 
 
@@ -109,10 +119,10 @@ r'''
 #def {insert method name here}:
 def index_explicit():
     '''
-        return 'Hello World' message with a status code of 200
-        Returns:
-            string: Hello World
-            status code: 200
+    return 'Hello World' message with a status code of 200
+    Returns:
+        string: Hello World
+        status code: 200
     '''
     #resp = make_response({insert ditionary here})
     resp = make_response({'message': 'Hello world'})
